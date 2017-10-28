@@ -2,17 +2,20 @@ import java.util.Random;
 
 public class Pessoa {
 	private int meuCartao;
-	private final String sexo;
+	private String sexo;
 	private static int numerDeObjetos = 0;
 	
 	private int[] vCartoes = new int[3];
 	
 	public Pessoa() {
+		gerarSexo();
+		this.meuCartao = Pessoa.numerDeObjetos += 1;
+	}
+	
+	private void gerarSexo(){
 		// 0 - masculino, 1 feminino 
 		int sexo = new Random().nextInt(2);
-		this.sexo = (sexo == 0) ? "masculino" : "feminino";
-		
-		this.meuCartao = Pessoa.numerDeObjetos += 1;
+		this.sexo = (sexo == 0) ? "masculino" : "feminino";		
 	}
 	
 	public int getId() {
