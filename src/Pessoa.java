@@ -1,15 +1,14 @@
 import java.util.Random;
 
 public class Pessoa {
-	private int meuCartao;
+	private Cartao meuCartao;
 	private String sexo;
-	private static int numerDeObjetos = 0;
 	
-	private int[] vCartoes = new int[3];
+	private Cartao[] vCartoes = new Cartao[3];
 	
 	public Pessoa() {
 		gerarSexo();
-		this.meuCartao = Pessoa.numerDeObjetos += 1;
+		this.meuCartao = new Cartao();
 	}
 	
 	private void gerarSexo(){
@@ -18,7 +17,7 @@ public class Pessoa {
 		this.sexo = (sexo == 0) ? "masculino" : "feminino";		
 	}
 	
-	public int getId() {
+	public Cartao getMeuCartao() {
 		return meuCartao;
 	}
 	
@@ -26,29 +25,29 @@ public class Pessoa {
 		return sexo;
 	}
 	
-	public void receberCartaoIdPessoa(int cartao){
+	public void receberCartaoIdPessoa(Cartao cartao){
 		if(!is_vCartoesCheio() && !is_cartao(cartao)){
 			adicionarCartao(cartao);
 		}
 	}
 	
-	private void adicionarCartao(int cartao) {
+	private void adicionarCartao(Cartao cartao) {
 		for (int i = 0; i < vCartoes.length; i++)
-			if(vCartoes[i] == 0){
+			if(vCartoes[i] == null){
 				vCartoes[i] = cartao;
 				break;
 			}
 	}
 
 	private boolean is_vCartoesCheio(){
-		for (int i : vCartoes)
-			if (i == 0) return false;
+		for (Cartao i : vCartoes)
+			if (i == null) return false;
 		return true;
 	}
 	
-	private boolean is_cartao(int id){
-		for (int i : vCartoes)
-			if( i == id) return true;
+	private boolean is_cartao(Cartao cartao){
+		for (Cartao i : vCartoes)
+			if( i.equals(cartao)) return true;
 		return false;
 	}
 	
