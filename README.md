@@ -1,6 +1,6 @@
 # problema-reuniao-de-negocios
 
-#Descrição
+# Descrição
 
 Considere um ambiente de reunião que chamaremos de Sala. A Sala tem capacidade para até 5 (cinco) pessoas. Isto é, quando a Sala atingir a capacidade máxima, uma Pessoa somente poderá entrar se alguem que esteja dentro da Sala sair.
 
@@ -8,7 +8,7 @@ As Pessoas, homens e mulheres, ao entrar na Sala irão fazer os contatos e troca
 
 No entanto, pela política de igualdade de gênero na empresa, qualquer pessoa, homem ou mulher, deve obter, no mínimo, um cartão de cada sexo. Isto é, cada pessoa, independente de ser homem ou mulher, deve receber, pelo menos, um cartão de outro homem e um cartão de outra mulher.
 
-#Implementação     
+# Implementação     
 
 O trabalho prático consiste em escrever um programa em C, C++, Java ou Python para simular o problema. Não precisa fazer interface gráfica. 
 
