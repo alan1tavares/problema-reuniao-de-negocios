@@ -1,3 +1,4 @@
+package pessoa;
 
 public class Cartao {
 	private static int numeroDeCartoes = 0;
