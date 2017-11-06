@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import pessoa.FabricaPessoas;
+import pessoa.FabricaDePessoas;
 import pessoa.Pessoa;
 import sala.Porteiro;
 import sala.Sala;
@@ -14,7 +14,7 @@ public class Main {
 		Sala sala = new Sala(5);
 		List<Pessoa> listaDeEspera = new ArrayList<>();
 		
-		FabricaPessoas fabricaDePessoa = new FabricaPessoas(5, listaDeEspera);
+		FabricaDePessoas fabricaDePessoa = new FabricaDePessoas(5, listaDeEspera);
 		Porteiro porteiro = new Porteiro(sala, listaDeEspera);
 		
 		ExecutorService executorService = Executors.newCachedThreadPool();

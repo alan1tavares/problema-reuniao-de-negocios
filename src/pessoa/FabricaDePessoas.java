@@ -1,20 +1,20 @@
 package pessoa;
 import java.util.List;
 
-public class FabricaPessoas implements Runnable {
-	private List<Pessoa> pessoasCriadas;
+public class FabricaDePessoas implements Runnable {
+	private List<Pessoa> pessoas;
 	private int numDePessoasASeremCriadas;
 	
-	public FabricaPessoas(int numDePessoasASeremCriadas, List<Pessoa> listaDeEspera) {
+	public FabricaDePessoas(int numDePessoasASeremCriadas, List<Pessoa> pessoas) {
 		this.numDePessoasASeremCriadas = numDePessoasASeremCriadas;
-		this.pessoasCriadas = listaDeEspera;
+		this.pessoas = pessoas;
 	}
 	
 
 	private synchronized void addLista(Pessoa pessoa) {
-		pessoasCriadas.add(pessoa);
+		pessoas.add(pessoa);
 		System.out.println(pessoa+" foi pra lista de espera.");
-		System.out.println(pessoasCriadas);
+		System.out.println(pessoas);
 	}
 	
 	@Override
