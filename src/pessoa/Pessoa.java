@@ -8,7 +8,9 @@ public class Pessoa implements Runnable {
 	private Cartao meuCartao;
 	private String sexo;
 
-	private Cartao[] vCartoes = new Cartao[3];
+	private Cartao[] vCartoes = new Cartao[3]; // Mudar isso aqui depois pra um ArrayList.
+	// A pessoa pode receber vários cartoes
+
 	private Sala sala;
 
 	// Métodos
@@ -25,57 +27,37 @@ public class Pessoa implements Runnable {
 		this.sexo = (sexo == 0) ? "masculino" : "feminino";
 	}
 
-	public Cartao getMeuCartao() {
-		return meuCartao;
+	@Override
+	public void run() {
+
+		entrarNaSala();
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		// for (int i = 1; i <= 3; i++)
+		// tentarTrocarCartaComOutraPessoa();
+		//
+		// while (!podeSairDaSala())
+		// this.wait();
+
+		sairDaSala();
 	}
 
-	public String getSexo() {
-		return sexo;
+	private void sairDaSala() {
+		this.sala.sairDaSala(this);
+	}
+
+	private void entrarNaSala() {
+		this.sala.entrarNaSala(this);
 	}
 
 	@Override
-	public void run() {
-		try {
-			// Vai ficar tentando entrar na sala
-			while (!this.sala.entrarNaSala(this));
-			
-			// A pesso entrou na sala
-			while(!tenhoTodosOsCartoes()) {
-				
-			}
-			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	public void receberCartaoIdPessoa(Cartao cartao) {
-		if (!tenhoTodosOsCartoes() && !is_cartao(cartao)) {
-			adicionarCartao(cartao);
-		}
-	}
-
-	private void adicionarCartao(Cartao cartao) {
-		for (int i = 0; i < vCartoes.length; i++)
-			if (vCartoes[i] == null) {
-				vCartoes[i] = cartao;
-				break;
-			}
-	}
-
-	private boolean tenhoTodosOsCartoes() {
-		for (Cartao i : vCartoes)
-			if (i == null)
-				return false;
-		return true;
-	}
-
-	private boolean is_cartao(Cartao cartao) {
-		for (Cartao i : vCartoes)
-			if (i.equals(cartao))
-				return true;
-		return false;
+	public String toString() {
+		return super.toString().replaceAll("pessoa.", "");
 	}
 
 }
