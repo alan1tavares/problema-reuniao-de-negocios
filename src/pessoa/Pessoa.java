@@ -1,6 +1,7 @@
 package pessoa;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -38,16 +39,20 @@ public class Pessoa implements Runnable {
 		entrarNaSala();
 
 		System.out.println(this + " esta procurando alguem pra trocar cartao");
-//		synchronized (this.sala) {
-			for (int i = 1; i <= 3; i++) {
-//				List<Pessoa> pessoas = new ArrayList<>(this.sala.listaDePessoasNaSala());
-				// Solução com interator
-				
-				List<Pessoa> pessoas = this.sala.listaDePessoasNaSala();
-				System.out.println(this + " ja está " + i + "a tentativa");
-				System.out.println(this + " pessoas na sala " + pessoas);
+		for (int i = 1; i <= 3; i++) {
+			// List<Pessoa> pessoas = new ArrayList<>(this.sala.listaDePessoasNaSala());
+			// Solução com interator
 
-				for (Pessoa pessoa : pessoas) {
+			synchronized (this.sala.listaDePessoasNaSala()) {
+				List<Pessoa> pessoas = this.sala.listaDePessoasNaSala();
+//				Iterator<Pessoa> pessoasInterator = this.sala.listaDePessoasNaSala().iterator();
+				System.out.println(this + " ja está " + i + "a tentativa");
+				System.out.println(this + " pessoas na sala " + this.sala.listaDePessoasNaSala());
+
+				for (Pessoa pessoa: pessoas) {
+					
+//					pessoa = pessoasInterator.next();
+
 					synchronized (pessoa) {
 						if (pessoa.getMeuCartao() != this.meuCartao && !tenhoEsteCartao(pessoa.getMeuCartao())
 								&& !pessoa.estaTrocandoCartao()) {
@@ -76,7 +81,7 @@ public class Pessoa implements Runnable {
 					}
 				}
 			}
-//		}
+		}
 
 		synchronized (this) {
 			while (this.totalDeCartoes() < 3 && !this.estaTrocandoCartao()) {
