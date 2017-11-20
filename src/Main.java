@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Sala sala = new Sala(5);
-		CriaPessoaAleatoria fabricaDePessoas = new CriaPessoaAleatoria(20, sala);
+		CriaPessoaAleatoria fabricaDePessoas = new CriaPessoaAleatoria(10, sala);
 		
 //		Porteiro porteiro = new Porteiro(sala, listaDeEspera);
 		
@@ -20,6 +20,7 @@ public class Main {
 //		executorService.execute(porteiro);
 		
 		executorService.shutdown();
+		
 
 	}
 

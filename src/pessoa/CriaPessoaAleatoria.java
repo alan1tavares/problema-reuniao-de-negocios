@@ -29,7 +29,6 @@ public class CriaPessoaAleatoria implements Runnable {
 				Pessoa pessoa = new Pessoa(this.sala);
 				System.out.println(pessoa + " foi criada");
 				listaDePessoasCriadas.adicionar(pessoa);
-				System.out.println(pessoa + " entrou na lista");
 
 				this.executorService.execute(pessoa);
 

@@ -22,6 +22,12 @@ public class ListaDePessoas {
 	public int totalDePessoas() {
 		return this.pessoas.size();
 	}
+	
+	
+
+	public List<Pessoa> getPessoas() {
+		return this.pessoas;
+	}
 
 	@Override
 	public String toString() {
