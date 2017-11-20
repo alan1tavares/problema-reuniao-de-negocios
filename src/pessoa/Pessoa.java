@@ -16,7 +16,7 @@ public class Pessoa implements Runnable {
 
 	private Sala sala;
 
-	private AtomicBoolean trocandoCartao = new AtomicBoolean(false);
+	public AtomicBoolean estaTrocandoCartao = new AtomicBoolean(false);
 
 	// Métodos
 
@@ -40,47 +40,32 @@ public class Pessoa implements Runnable {
 
 		System.out.println(this + " esta procurando alguem pra trocar cartao");
 		for (int i = 1; i <= 3; i++) {
-			// List<Pessoa> pessoas = new ArrayList<>(this.sala.listaDePessoasNaSala());
-			// Solução com interator
 
-			synchronized (this.sala.listaDePessoasNaSala()) {
-				List<Pessoa> pessoas = this.sala.listaDePessoasNaSala();
-//				Iterator<Pessoa> pessoasInterator = this.sala.listaDePessoasNaSala().iterator();
-				System.out.println(this + " ja está " + i + "a tentativa");
-				System.out.println(this + " pessoas na sala " + this.sala.listaDePessoasNaSala());
-
-				for (Pessoa pessoa: pessoas) {
-					
-//					pessoa = pessoasInterator.next();
-
-					synchronized (pessoa) {
-						if (pessoa.getMeuCartao() != this.meuCartao && !tenhoEsteCartao(pessoa.getMeuCartao())
-								&& !pessoa.estaTrocandoCartao()) {
-							pessoa.setTrocandoCartao(true);
-							this.setTrocandoCartao(true);
-
-							try {
-								Thread.sleep(2000);
-							} catch (InterruptedException e) {
-								e.printStackTrace();
-							}
-
-							// if(this.sala.estaNaSala(pessoa))
-							this.trocarCartao(pessoa);
-							pessoa.trocarCartao(this);
-							pessoa.notify();
-
-							System.out.println("Na " + i + "a tentativa " + this + " trocou cartao com " + pessoa);
-
-							pessoa.setTrocandoCartao(false);
-							this.setTrocandoCartao(false);
-
-							break;
-
-						}
-					}
+			List<Pessoa> pessoas = this.sala.listaDePessoasNaSala();
+			System.out.println(this + " ja está " + i + "a tentativa");
+			System.out.println(this + " pessoas na sala " + this.sala.listaDePessoasNaSala());
+			
+			Pessoa pessoa = buscarPessoaPraTrocarCartao(pessoas);
+			synchronized(pessoa) {
+				
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
+				
+				
+				this.trocarCartao(pessoa);
+				pessoa.trocarCartao(this);
+				pessoa.notify();
+				
+				System.out.println("Na " + i + "a tentativa " + this + " trocou cartao com " + pessoa);
+								
 			}
+			
+
+
+
 		}
 
 		synchronized (this) {
@@ -95,14 +80,23 @@ public class Pessoa implements Runnable {
 			}
 		}
 
-		//
-		// while (!podeSairDaSala())
-		// this.wait();
-
 		sairDaSala();
 	}
 
-	private void trocarCartao(Pessoa pessoa) {
+	private Pessoa buscarPessoaPraTrocarCartao(List<Pessoa> pessoas) {
+		synchronized (pessoas) {
+			for (Pessoa pessoa : pessoas) {
+				if (pessoa.getMeuCartao() != meuCartao && !tenhoEsteCartao(pessoa.getMeuCartao())
+						&& !pessoa.estaTrocandoCartao())
+					return pessoa;
+			}
+		}
+
+		return null;
+
+	}
+
+	private synchronized void trocarCartao(Pessoa pessoa) {
 		this.cartoes.add(pessoa.meuCartao);
 	}
 
@@ -110,7 +104,7 @@ public class Pessoa implements Runnable {
 		return this.cartoes.contains(cartao);
 	}
 
-	private void sairDaSala() {
+	private synchronized void sairDaSala() {
 		this.sala.sairDaSala(this);
 	}
 
@@ -128,11 +122,11 @@ public class Pessoa implements Runnable {
 	}
 
 	public boolean estaTrocandoCartao() {
-		return trocandoCartao.get();
+		return estaTrocandoCartao.get();
 	}
 
 	public void setTrocandoCartao(boolean trocandoCartao) {
-		this.trocandoCartao.set(trocandoCartao);
+		this.estaTrocandoCartao.set(trocandoCartao);
 	}
 
 	public int totalDeCartoes() {

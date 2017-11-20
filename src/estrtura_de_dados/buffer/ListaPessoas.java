@@ -1,4 +1,4 @@
-package estrtura_de_dados;
+package estrtura_de_dados.buffer;
 
 import pessoa.Pessoa;
 

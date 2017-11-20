@@ -1,14 +1,19 @@
-package pessoa;
+package estrtura_de_dados;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import pessoa.Pessoa;
 
 public class ListaDePessoas {
 	private List<Pessoa> pessoas;
+	// AtomicBoolean bloquearRemocao;
 
 	public ListaDePessoas() {
 		this.pessoas = Collections.synchronizedList(new ArrayList<Pessoa>());
+		// bloquearRemocao = new AtomicBoolean();
 	}
 
 	public void adicionar(Pessoa pessoa) {
@@ -16,14 +21,13 @@ public class ListaDePessoas {
 	}
 
 	public void remover(Pessoa pessoa) {
+		// if(!bloquearRemocao.get())
 		this.pessoas.remove(pessoa);
 	}
 
 	public int totalDePessoas() {
 		return this.pessoas.size();
 	}
-	
-	
 
 	public List<Pessoa> getPessoas() {
 		return this.pessoas;
@@ -31,8 +35,7 @@ public class ListaDePessoas {
 
 	@Override
 	public String toString() {
-		String saida = String.format("Total de pessoas: %d.\nPessoas%s", this.pessoas.size(),
-				this.pessoas.toString());
+		String saida = String.format("Total de pessoas: %d.\nPessoas%s", this.pessoas.size(), this.pessoas.toString());
 		return saida;
 	}
 }

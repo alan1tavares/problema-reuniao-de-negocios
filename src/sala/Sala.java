@@ -2,7 +2,7 @@ package sala;
 
 import java.util.List;
 
-import pessoa.ListaDePessoas;
+import estrtura_de_dados.ListaDePessoas;
 import pessoa.Pessoa;
 
 public class Sala {

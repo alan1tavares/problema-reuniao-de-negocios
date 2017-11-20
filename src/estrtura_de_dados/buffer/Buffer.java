@@ -1,4 +1,4 @@
-package estrtura_de_dados;
+package estrtura_de_dados.buffer;
 
 public interface Buffer<E> {
 	public void adicionar(E elemento);

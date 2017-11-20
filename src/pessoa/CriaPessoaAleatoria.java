@@ -3,6 +3,7 @@ package pessoa;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import estrtura_de_dados.ListaDePessoas;
 import sala.Sala;
 
 public class CriaPessoaAleatoria implements Runnable {
