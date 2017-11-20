@@ -38,36 +38,38 @@ public class Pessoa implements Runnable {
 		entrarNaSala();
 
 		System.out.println(this + " esta procurando alguem pra trocar cartao");
-		for (int i = 1; i <= 3; i++) {
-			List<Pessoa> pessoas = new ArrayList<>(this.sala.listaDePessoasNaSala());
-			System.out.println(this + " ja está " + i + "a tentativa");
-			System.out.println(this + " pessoas na sala " + pessoas);
-			
-			for (Pessoa pessoa : pessoas) {
-				synchronized (pessoa) {
-					if (pessoa.getMeuCartao() != this.meuCartao && !tenhoEsteCartao(pessoa.getMeuCartao())
-							&& !pessoa.estaTrocandoCartao()) {
-						pessoa.setTrocandoCartao(true);
-						this.setTrocandoCartao(true);
+		synchronized (this.sala) {
+			for (int i = 1; i <= 3; i++) {
+				List<Pessoa> pessoas = new ArrayList<>(this.sala.listaDePessoasNaSala());
+				System.out.println(this + " ja está " + i + "a tentativa");
+				System.out.println(this + " pessoas na sala " + pessoas);
 
-						try {
-							Thread.sleep(2000);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
+				for (Pessoa pessoa : pessoas) {
+					synchronized (pessoa) {
+						if (pessoa.getMeuCartao() != this.meuCartao && !tenhoEsteCartao(pessoa.getMeuCartao())
+								&& !pessoa.estaTrocandoCartao()) {
+							pessoa.setTrocandoCartao(true);
+							this.setTrocandoCartao(true);
+
+							try {
+								Thread.sleep(2000);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+
+							// if(this.sala.estaNaSala(pessoa))
+							this.trocarCartao(pessoa);
+							pessoa.trocarCartao(this);
+							pessoa.notify();
+
+							System.out.println("Na " + i + "a tentativa " + this + " trocou cartao com " + pessoa);
+
+							pessoa.setTrocandoCartao(false);
+							this.setTrocandoCartao(false);
+
+							break;
+
 						}
-						
-//						if(this.sala.estaNaSala(pessoa))
-						this.trocarCartao(pessoa);
-						pessoa.trocarCartao(this);
-						pessoa.notify();
-
-						System.out.println("Na " + i + "a tentativa " + this + " trocou cartao com " + pessoa);
-						
-						pessoa.setTrocandoCartao(false);
-						this.setTrocandoCartao(false);
-
-						break;
-
 					}
 				}
 			}
