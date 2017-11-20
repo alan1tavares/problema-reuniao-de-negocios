@@ -1,14 +1,14 @@
 package pessoa;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListaDePessoas {
 	private List<Pessoa> pessoas;
 
 	public ListaDePessoas() {
-		this.pessoas = Collections.synchronizedList(new ArrayList<Pessoa>());
+		this.pessoas = Collections.synchronizedList(new LinkedList<Pessoa>());
 	}
 
 	public void adicionar(Pessoa pessoa) {

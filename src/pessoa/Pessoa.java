@@ -38,9 +38,12 @@ public class Pessoa implements Runnable {
 		entrarNaSala();
 
 		System.out.println(this + " esta procurando alguem pra trocar cartao");
-		synchronized (this.sala) {
+//		synchronized (this.sala) {
 			for (int i = 1; i <= 3; i++) {
-				List<Pessoa> pessoas = new ArrayList<>(this.sala.listaDePessoasNaSala());
+//				List<Pessoa> pessoas = new ArrayList<>(this.sala.listaDePessoasNaSala());
+				// Solução com interator
+				
+				List<Pessoa> pessoas = this.sala.listaDePessoasNaSala();
 				System.out.println(this + " ja está " + i + "a tentativa");
 				System.out.println(this + " pessoas na sala " + pessoas);
 
@@ -73,7 +76,7 @@ public class Pessoa implements Runnable {
 					}
 				}
 			}
-		}
+//		}
 
 		synchronized (this) {
 			while (this.totalDeCartoes() < 3 && !this.estaTrocandoCartao()) {
