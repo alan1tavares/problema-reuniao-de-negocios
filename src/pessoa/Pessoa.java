@@ -1,7 +1,6 @@
 package pessoa;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -44,27 +43,27 @@ public class Pessoa implements Runnable {
 			List<Pessoa> pessoas = this.sala.listaDePessoasNaSala();
 			System.out.println(this + " ja está " + i + "a tentativa");
 			System.out.println(this + " pessoas na sala " + this.sala.listaDePessoasNaSala());
-			
+
 			Pessoa pessoa = buscarPessoaPraTrocarCartao(pessoas);
-			synchronized(pessoa) {
-				
+			if (pessoa == null)
+				continue;
+			synchronized (pessoa) {
+
 				try {
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
-				
+
+				if (!this.sala.listaDePessoasNaSala().contains(pessoa) || this.cartoes.contains(pessoa.meuCartao))
+					continue;
 				this.trocarCartao(pessoa);
 				pessoa.trocarCartao(this);
 				pessoa.notify();
-				
+
 				System.out.println("Na " + i + "a tentativa " + this + " trocou cartao com " + pessoa);
-								
+
 			}
-			
-
-
 
 		}
 
@@ -96,7 +95,7 @@ public class Pessoa implements Runnable {
 
 	}
 
-	private synchronized void trocarCartao(Pessoa pessoa) {
+	private void trocarCartao(Pessoa pessoa) {
 		this.cartoes.add(pessoa.meuCartao);
 	}
 
