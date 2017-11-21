@@ -1,35 +1,24 @@
 package pessoa;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
 
+import estrtura_de_dados.ListaDeCartoes;
 import sala.Sala;
 
 public class Pessoa implements Runnable {
-	private Cartao meuCartao;
-	private String sexo;
+	public final Sexo sexo = (new Random().nextInt(2) == 0) ? Sexo.Masculino : Sexo.Feminino;
 
-	private List<Cartao> cartoes;
+	private Cartao meuCartao;
+	private ListaDeCartoes cartoes;
 
 	private Sala sala;
 
-	public AtomicBoolean estaTrocandoCartao = new AtomicBoolean(false);
-
-	// Métodos
+	// public AtomicBoolean estaTrocandoCartao = new AtomicBoolean(false);
 
 	public Pessoa(Sala sala) {
-		gerarSexo();
-		this.meuCartao = new Cartao();
+		meuCartao = new Cartao();
 		this.sala = sala;
-		this.cartoes = new ArrayList<>();
-	}
-
-	private void gerarSexo() {
-		// 0 - masculino, 1 feminino
-		int sexo = new Random().nextInt(2);
-		this.sexo = (sexo == 0) ? "masculino" : "feminino";
 	}
 
 	@Override
@@ -40,9 +29,9 @@ public class Pessoa implements Runnable {
 		System.out.println(this + " esta procurando alguem pra trocar cartao");
 		for (int i = 1; i <= 3; i++) {
 
-			List<Pessoa> pessoas = this.sala.listaDePessoasNaSala();
+			List<Pessoa> pessoas = sala.listaDePessoasNaSala();
 			System.out.println(this + " ja está " + i + "a tentativa");
-			System.out.println(this + " pessoas na sala " + this.sala.listaDePessoasNaSala());
+			System.out.println(this + " pessoas na sala " + sala.listaDePessoasNaSala());
 
 			Pessoa pessoa = buscarPessoaPraTrocarCartao(pessoas);
 			if (pessoa == null)
@@ -55,9 +44,9 @@ public class Pessoa implements Runnable {
 					e.printStackTrace();
 				}
 
-				if (!this.sala.listaDePessoasNaSala().contains(pessoa) || this.cartoes.contains(pessoa.meuCartao))
+				if (!sala.listaDePessoasNaSala().contains(pessoa) || tenhoEsteCartao(pessoa.meuCartao))
 					continue;
-				this.trocarCartao(pessoa);
+				trocarCartao(pessoa);
 				pessoa.trocarCartao(this);
 				pessoa.notify();
 
@@ -68,7 +57,8 @@ public class Pessoa implements Runnable {
 		}
 
 		synchronized (this) {
-			while (this.totalDeCartoes() < 3 && !this.estaTrocandoCartao()) {
+			while (cartoes.total() < 3 && cartoes.totalDoSexoMasculino() > 1
+					&& cartoes.totalDoSexoFeminino() > 1/* && !estaTrocandoCartao() */) {
 				try {
 					System.out.println(this + " nao tem cartoes pra sair da sala. Foi dormir.");
 					wait();
@@ -86,7 +76,7 @@ public class Pessoa implements Runnable {
 		synchronized (pessoas) {
 			for (Pessoa pessoa : pessoas) {
 				if (pessoa.getMeuCartao() != meuCartao && !tenhoEsteCartao(pessoa.getMeuCartao())
-						&& !pessoa.estaTrocandoCartao())
+				/* && !pessoa.estaTrocandoCartao() */)
 					return pessoa;
 			}
 		}
@@ -96,19 +86,19 @@ public class Pessoa implements Runnable {
 	}
 
 	private void trocarCartao(Pessoa pessoa) {
-		this.cartoes.add(pessoa.meuCartao);
+		cartoes.adicionarCartaoPessoa(pessoa);
 	}
 
 	private boolean tenhoEsteCartao(Cartao cartao) {
-		return this.cartoes.contains(cartao);
+		return cartoes.contem(cartao);
 	}
 
 	private synchronized void sairDaSala() {
-		this.sala.sairDaSala(this);
+		sala.sairDaSala(this);
 	}
 
 	private void entrarNaSala() {
-		this.sala.entrarNaSala(this);
+		sala.entrarNaSala(this);
 	}
 
 	@Override
@@ -117,19 +107,15 @@ public class Pessoa implements Runnable {
 	}
 
 	public Cartao getMeuCartao() {
-		return this.meuCartao;
+		return meuCartao;
 	}
 
-	public boolean estaTrocandoCartao() {
-		return estaTrocandoCartao.get();
-	}
+	// public boolean estaTrocandoCartao() {
+	// return estaTrocandoCartao.get();
+	// }
 
-	public void setTrocandoCartao(boolean trocandoCartao) {
-		this.estaTrocandoCartao.set(trocandoCartao);
-	}
-
-	public int totalDeCartoes() {
-		return this.cartoes.size();
-	}
+	// public void setTrocandoCartao(boolean trocandoCartao) {
+	// estaTrocandoCartao.set(trocandoCartao);
+	// }
 
 }
