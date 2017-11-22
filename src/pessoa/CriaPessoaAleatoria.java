@@ -2,6 +2,7 @@ package pessoa;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import estrtura_de_dados.ListaDePessoas;
 import sala.Sala;
@@ -19,7 +20,7 @@ public class CriaPessoaAleatoria implements Runnable {
 		this.listaDePessoasCriadas = new ListaDePessoas();
 		this.sala = sala;
 
-		this.executorService = Executors.newCachedThreadPool();
+		executorService = Executors.newCachedThreadPool();
 	}
 
 	@Override
@@ -31,7 +32,7 @@ public class CriaPessoaAleatoria implements Runnable {
 				System.out.println(pessoa + " foi criada");
 				listaDePessoasCriadas.adicionar(pessoa);
 
-				this.executorService.execute(pessoa);
+				executorService.execute(pessoa);
 
 				Thread.sleep(2000);
 
@@ -40,8 +41,18 @@ public class CriaPessoaAleatoria implements Runnable {
 			}
 		}
 
-		System.out.println(this.listaDePessoasCriadas);
+		System.out.println("\n" + listaDePessoasCriadas + "\n");
 
 		this.executorService.shutdown();
+		
+		try {
+			if (!executorService.awaitTermination(120, TimeUnit.SECONDS)) {
+				System.out.println("Aqui");
+				executorService.shutdownNow();
+			}else
+				System.out.println("Este");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

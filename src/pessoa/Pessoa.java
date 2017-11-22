@@ -17,8 +17,9 @@ public class Pessoa implements Runnable {
 	// public AtomicBoolean estaTrocandoCartao = new AtomicBoolean(false);
 
 	public Pessoa(Sala sala) {
-		meuCartao = new Cartao();
 		this.sala = sala;
+		meuCartao = new Cartao();
+		cartoes = new ListaDeCartoes();
 	}
 
 	@Override
@@ -57,8 +58,8 @@ public class Pessoa implements Runnable {
 		}
 
 		synchronized (this) {
-			while (cartoes.total() < 3 && cartoes.totalDoSexoMasculino() > 1
-					&& cartoes.totalDoSexoFeminino() > 1/* && !estaTrocandoCartao() */) {
+			while (cartoes.total() < 3 || cartoes.totalDoSexoMasculino() < 1
+					|| cartoes.totalDoSexoFeminino() < 1/* && !estaTrocandoCartao() */) {
 				try {
 					System.out.println(this + " nao tem cartoes pra sair da sala. Foi dormir.");
 					wait();

@@ -16,6 +16,8 @@ public class ListaDeCartoes {
 
 	public ListaDeCartoes() {
 		this.cartoes = Collections.synchronizedList(new ArrayList<Cartao>());
+		totalCartoesSexoMasculino = new AtomicInteger(0);
+		totalCartoesSexoFeminino = new AtomicInteger(0);
 	}
 
 	public void adicionarCartaoPessoa(Pessoa pessoa) {

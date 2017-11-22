@@ -4,11 +4,14 @@ import java.util.List;
 
 import estrtura_de_dados.ListaDePessoas;
 import pessoa.Pessoa;
+import pessoa.Sexo;
 
 public class Sala {
 
 	private ListaDePessoas lugares;
 	private int tamanho;
+	private int quantidadeSexoMasculino = 0;
+	private int quantidadeSexoFeminino = 0;
 
 	public Sala(int tamanho) {
 		this.tamanho = tamanho;
@@ -18,8 +21,9 @@ public class Sala {
 	// Verdadeiro se a pessoa entrou na sala
 	public synchronized void entrarNaSala(Pessoa pessoa) {
 
-		if (this.lugares.totalDePessoas() == this.tamanho) {
-			System.out.printf("A sala esta cheia.\nA %s vai dormir.\n", pessoa);
+		while (lugares.totalDePessoas() == tamanho || quantidadeSexoMasculino >= (tamanho - 1)
+				|| quantidadeSexoFeminino >= (tamanho - 1)) {
+			System.out.println(pessoa + " nao conseguiu entrar na sala. Vai dormir.");
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -27,8 +31,13 @@ public class Sala {
 				e.printStackTrace();
 			}
 		}
-
-		this.lugares.adicionar(pessoa);
+		
+		if(pessoa.sexo == Sexo.Masculino)
+			quantidadeSexoMasculino++;
+		else
+			quantidadeSexoFeminino++;
+		
+		lugares.adicionar(pessoa);
 		System.out.println(pessoa + " entrou na sala.");
 		System.out.println("Pessoas na sala: " + this + ".");
 	}
@@ -36,13 +45,18 @@ public class Sala {
 	public synchronized void sairDaSala(Pessoa pessoa) {
 
 		this.lugares.remover(pessoa);
+		
+		if(pessoa.sexo == Sexo.Masculino)
+			quantidadeSexoMasculino--;
+		else
+			quantidadeSexoFeminino--;
 
 		System.out.println(pessoa + " saiu da sala. Nofificando as outras.");
 		System.out.println("Sala: " + this);
 
 		notifyAll();
 	}
-	
+
 	public synchronized Pessoa buscarPessoa() {
 		return null;
 	}
