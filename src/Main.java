@@ -1,7 +1,9 @@
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import pessoa.CriaPessoaAleatoria;
+import pessoa.Pessoa;
 import sala.Sala;
 
 public class Main {
@@ -15,9 +17,7 @@ public class Main {
 		executorService.execute(fabricaDePessoas);
 
 		executorService.shutdown();
-		
-		
-		
+			
 
 	}
 

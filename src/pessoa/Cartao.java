@@ -1,14 +1,20 @@
 package pessoa;
 
 public class Cartao {
-	private static int numeroDeCartoes = 0;
-	private int id;
+	private String id;
+	private Sexo sexo;
 	
-	public Cartao() {
-		this.id = ++Cartao.numeroDeCartoes;
+	public Cartao(String id, Sexo sexo) {
+		this.id = id;
+		this.sexo = sexo;
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
+	}
+	
+	@Override
+	public String toString() {
+		return id+"["+sexo.getValor()+"]";
 	}
 }

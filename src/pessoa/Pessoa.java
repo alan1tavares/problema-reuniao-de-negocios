@@ -2,6 +2,7 @@ package pessoa;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import estrtura_de_dados.ListaDeCartoes;
 import sala.Sala;
@@ -16,21 +17,20 @@ public class Pessoa implements Runnable {
 
 	public Pessoa(Sala sala) {
 		this.sala = sala;
-		meuCartao = new Cartao();
+		meuCartao = new Cartao(Integer.toHexString(hashCode()), sexo);
 		cartoes = new ListaDeCartoes();
 	}
 
 	@Override
 	public void run() {
 		Thread.currentThread().setName(this.toString());
-		
+
 		entrarNaSala();
 
 		trocarCartao();
 
 		synchronized (this) {
-			while (cartoes.total() < 3 || cartoes.totalDoSexoMasculino() < 1
-					|| cartoes.totalDoSexoFeminino() < 1) {
+			while (cartoes.total() < 3 || cartoes.totalDoSexoMasculino() < 1 || cartoes.totalDoSexoFeminino() < 1) {
 				try {
 					System.out.println(this + " nao tem cartoes pra sair da sala. Foi dormir.");
 					wait();
@@ -60,7 +60,7 @@ public class Pessoa implements Runnable {
 				try {
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {
-					
+
 					e.printStackTrace();
 				}
 
@@ -71,7 +71,7 @@ public class Pessoa implements Runnable {
 				pessoa.notify();
 
 				System.out.println("Na " + i + "a tentativa " + this + " trocou cartao com " + pessoa);
-
+				
 			}
 
 		}
@@ -107,10 +107,14 @@ public class Pessoa implements Runnable {
 
 	@Override
 	public String toString() {
-		return super.toString().replaceAll("pessoa.", "");
+		return super.toString().replaceAll("pessoa.", "") + "[" + sexo.getValor()+"]";
 	}
 
 	public Cartao getMeuCartao() {
 		return meuCartao;
+	}
+
+	public ListaDeCartoes getCartoes() {
+		return cartoes;
 	}
 }
