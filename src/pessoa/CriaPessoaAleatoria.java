@@ -41,16 +41,15 @@ public class CriaPessoaAleatoria implements Runnable {
 			}
 		}
 
-		System.out.println("\n" + listaDePessoasCriadas + "\n");
+		System.out.println("\n Pssoas que foram ciradas:\n" + listaDePessoasCriadas + "\n");
 
 		this.executorService.shutdown();
-		
+
 		try {
-			if (!executorService.awaitTermination(120, TimeUnit.SECONDS)) {
-				System.out.println("Aqui");
+			if (!executorService.awaitTermination(70, TimeUnit.SECONDS)) {
+				System.out.println("Interrompenddo todas as threads....");
 				executorService.shutdownNow();
-			}else
-				System.out.println("Este");
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

@@ -18,7 +18,6 @@ public class Sala {
 		this.lugares = new ListaDePessoas();
 	}
 
-	// Verdadeiro se a pessoa entrou na sala
 	public synchronized void entrarNaSala(Pessoa pessoa) {
 
 		while (lugares.totalDePessoas() == tamanho || quantidadeSexoMasculino >= (tamanho - 1)
@@ -27,32 +26,33 @@ public class Sala {
 			try {
 				wait();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Thread: " + Thread.currentThread().getName() + " foi imterrompida");
+				return;
+				// e.printStackTrace();
 			}
 		}
-		
-		if(pessoa.sexo == Sexo.Masculino)
+
+		if (pessoa.sexo == Sexo.Masculino)
 			quantidadeSexoMasculino++;
 		else
 			quantidadeSexoFeminino++;
-		
+
 		lugares.adicionar(pessoa);
 		System.out.println(pessoa + " entrou na sala.");
-		System.out.println("Pessoas na sala: " + this + ".");
+		System.out.println("Pessoas que etao na sala: " + this + ".");
 	}
 
 	public synchronized void sairDaSala(Pessoa pessoa) {
 
 		this.lugares.remover(pessoa);
-		
-		if(pessoa.sexo == Sexo.Masculino)
+
+		if (pessoa.sexo == Sexo.Masculino)
 			quantidadeSexoMasculino--;
 		else
 			quantidadeSexoFeminino--;
 
 		System.out.println(pessoa + " saiu da sala. Nofificando as outras.");
-		System.out.println("Sala: " + this);
+		System.out.println("Pessoas que etao na sala: " + this + ".");
 
 		notifyAll();
 	}
@@ -63,10 +63,10 @@ public class Sala {
 
 	@Override
 	public String toString() {
-		return this.lugares.toString();
+		return lugares.toString();
 	}
 
 	public List<Pessoa> listaDePessoasNaSala() {
-		return this.lugares.getPessoas();
+		return lugares.getPessoas();
 	}
 }

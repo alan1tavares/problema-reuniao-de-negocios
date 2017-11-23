@@ -14,8 +14,6 @@ public class Pessoa implements Runnable {
 
 	private Sala sala;
 
-	// public AtomicBoolean estaTrocandoCartao = new AtomicBoolean(false);
-
 	public Pessoa(Sala sala) {
 		this.sala = sala;
 		meuCartao = new Cartao();
@@ -24,15 +22,35 @@ public class Pessoa implements Runnable {
 
 	@Override
 	public void run() {
-
+		Thread.currentThread().setName(this.toString());
+		
 		entrarNaSala();
 
+		trocarCartao();
+
+		synchronized (this) {
+			while (cartoes.total() < 3 || cartoes.totalDoSexoMasculino() < 1
+					|| cartoes.totalDoSexoFeminino() < 1) {
+				try {
+					System.out.println(this + " nao tem cartoes pra sair da sala. Foi dormir.");
+					wait();
+				} catch (InterruptedException e) {
+					System.out.println("Thread: " + Thread.currentThread().getName() + " foi imterrompida");
+					return;
+					// e.printStackTrace();
+				}
+			}
+		}
+
+		sairDaSala();
+	}
+
+	private void trocarCartao() {
 		System.out.println(this + " esta procurando alguem pra trocar cartao");
 		for (int i = 1; i <= 3; i++) {
 
 			List<Pessoa> pessoas = sala.listaDePessoasNaSala();
-			System.out.println(this + " ja está " + i + "a tentativa");
-			System.out.println(this + " pessoas na sala " + sala.listaDePessoasNaSala());
+			System.out.println(this + " está na " + i + "a tentativa");
 
 			Pessoa pessoa = buscarPessoaPraTrocarCartao(pessoas);
 			if (pessoa == null)
@@ -42,6 +60,7 @@ public class Pessoa implements Runnable {
 				try {
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {
+					
 					e.printStackTrace();
 				}
 
@@ -56,28 +75,12 @@ public class Pessoa implements Runnable {
 			}
 
 		}
-
-		synchronized (this) {
-			while (cartoes.total() < 3 || cartoes.totalDoSexoMasculino() < 1
-					|| cartoes.totalDoSexoFeminino() < 1/* && !estaTrocandoCartao() */) {
-				try {
-					System.out.println(this + " nao tem cartoes pra sair da sala. Foi dormir.");
-					wait();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
-
-		sairDaSala();
 	}
 
 	private Pessoa buscarPessoaPraTrocarCartao(List<Pessoa> pessoas) {
 		synchronized (pessoas) {
 			for (Pessoa pessoa : pessoas) {
-				if (pessoa.getMeuCartao() != meuCartao && !tenhoEsteCartao(pessoa.getMeuCartao())
-				/* && !pessoa.estaTrocandoCartao() */)
+				if (pessoa.getMeuCartao() != meuCartao && !tenhoEsteCartao(pessoa.getMeuCartao()))
 					return pessoa;
 			}
 		}
@@ -110,13 +113,4 @@ public class Pessoa implements Runnable {
 	public Cartao getMeuCartao() {
 		return meuCartao;
 	}
-
-	// public boolean estaTrocandoCartao() {
-	// return estaTrocandoCartao.get();
-	// }
-
-	// public void setTrocandoCartao(boolean trocandoCartao) {
-	// estaTrocandoCartao.set(trocandoCartao);
-	// }
-
 }
