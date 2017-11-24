@@ -2,7 +2,6 @@ package pessoa;
 
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import estrtura_de_dados.ListaDeCartoes;
 import sala.Sala;
@@ -26,8 +25,9 @@ public class Pessoa implements Runnable {
 		Thread.currentThread().setName(this.toString());
 
 		entrarNaSala();
-
+//		if(Thread.currentThread().isInterrupted()) return;
 		trocarCartao();
+//		if(Thread.currentThread().isInterrupted()) return;
 
 		synchronized (this) {
 			while (cartoes.total() < 3 || cartoes.totalDoSexoMasculino() < 1 || cartoes.totalDoSexoFeminino() < 1) {
@@ -36,6 +36,7 @@ public class Pessoa implements Runnable {
 					wait();
 				} catch (InterruptedException e) {
 					System.out.println("Thread: " + Thread.currentThread().getName() + " foi imterrompida");
+					Thread.currentThread().interrupt();
 					return;
 					// e.printStackTrace();
 				}

@@ -20,13 +20,15 @@ public class Sala {
 
 	public synchronized void entrarNaSala(Pessoa pessoa) {
 
-		while (lugares.totalDePessoas() == tamanho || quantidadeSexoMasculino >= (tamanho - 1)
-				|| quantidadeSexoFeminino >= (tamanho - 1)) {
+		while (lugares.totalDePessoas() == tamanho
+				|| (pessoa.sexo == Sexo.Masculino && quantidadeSexoMasculino >= (tamanho - 1))
+				|| (pessoa.sexo == Sexo.Feminino && quantidadeSexoFeminino >= (tamanho - 1))) {
 			System.out.println(pessoa + " nao conseguiu entrar na sala. Vai dormir.");
 			try {
 				wait();
 			} catch (InterruptedException e) {
 				System.out.println("Thread: " + Thread.currentThread().getName() + " foi imterrompida");
+				Thread.currentThread().interrupt();
 				return;
 				// e.printStackTrace();
 			}

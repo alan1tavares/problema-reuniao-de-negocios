@@ -1,6 +1,5 @@
 package pessoa;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -50,18 +49,14 @@ public class CriaPessoaAleatoria implements Runnable {
 		this.executorService.shutdown();
 
 		try {
-			if (!executorService.awaitTermination(70, TimeUnit.SECONDS)) {
+			if (!executorService.awaitTermination(2, TimeUnit.MINUTES)) {
 				System.out.println("Interrompenddo todas as threads....");
-				executorService.shutdownNow();
-				
-				Thread.sleep(3000);
-				
-								
+				executorService.shutdownNow();								
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+		System.out.println(sala);
 		List<Pessoa> pessoas = getListaDePessoasCriadas();
 		System.out.println("\nPessoa\t\t\t\t\tCartoes");
 		for (Pessoa pessoa : pessoas) {
