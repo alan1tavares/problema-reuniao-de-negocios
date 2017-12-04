@@ -17,6 +17,8 @@ public class CriaPessoaAleatoria implements Runnable {
 	private Sala sala;
 
 	ExecutorService executorService;
+	private double tempoMedioFila;
+	private double tempoMedioSala;
 
 	public CriaPessoaAleatoria(int numPessoas, Sala sala) {
 		this.numPessoas = numPessoas;
@@ -51,20 +53,38 @@ public class CriaPessoaAleatoria implements Runnable {
 		try {
 			if (!executorService.awaitTermination(2, TimeUnit.MINUTES)) {
 				System.out.println("Interrompenddo todas as threads....");
-				executorService.shutdownNow();								
+				executorService.shutdownNow();
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		System.out.println(sala);
 		List<Pessoa> pessoas = getListaDePessoasCriadas();
-		System.out.println("\nPessoa\t\t\t\t\tCartoes");
+//		System.out.println("\nPessoa\t\t\t\t\tCartoes\t\t\tTempo");
+		double tempoTotalSala = 0, tempoTotalFila = 0;
 		for (Pessoa pessoa : pessoas) {
-			System.out.println(pessoa+"\t\t"+pessoa.getCartoes());
+//			System.out.println(pessoa + "\t\t" + pessoa.getCartoes() + "\t\t" + pessoa.getTempoNaSala());
+
+			tempoTotalSala += pessoa.getTempoNaSala();
+			tempoTotalFila += pessoa.getTempoNaFila();
 		}
+
+//		System.out.println("Tempo medio na fila: " + (tempoTotalFila / listaDePessoasCriadas.totalDePessoas()) + "s");
+//		System.out.println("Tempo medio na sala: " + (tempoTotalSala / listaDePessoasCriadas.totalDePessoas()) + "s");
+		tempoMedioFila = tempoTotalFila / listaDePessoasCriadas.totalDePessoas();
+		tempoMedioSala = tempoTotalSala / listaDePessoasCriadas.totalDePessoas();
+		
 	}
-	
+
 	public List<Pessoa> getListaDePessoasCriadas() {
 		return Collections.unmodifiableList(listaDePessoasCriadas.getPessoas());
+	}
+
+	public double getTempoMedioFila() {
+		return tempoMedioFila;
+	}
+
+	public double getTempoMedioSala() {
+		return tempoMedioSala;
 	}
 }

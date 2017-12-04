@@ -8,11 +8,9 @@ import pessoa.Pessoa;
 
 public class ListaDePessoas {
 	private List<Pessoa> pessoas;
-	// AtomicBoolean bloquearRemocao;
 
 	public ListaDePessoas() {
 		this.pessoas = Collections.synchronizedList(new ArrayList<Pessoa>());
-		// bloquearRemocao = new AtomicBoolean();
 	}
 
 	public void adicionar(Pessoa pessoa) {
@@ -20,7 +18,6 @@ public class ListaDePessoas {
 	}
 
 	public void remover(Pessoa pessoa) {
-		// if(!bloquearRemocao.get())
 		this.pessoas.remove(pessoa);
 	}
 

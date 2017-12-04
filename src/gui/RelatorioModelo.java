@@ -5,12 +5,12 @@ import javafx.beans.property.SimpleStringProperty;
 public class RelatorioModelo {
 	private final SimpleStringProperty nome;
 	private final SimpleStringProperty cartao;
-	private final SimpleStringProperty sala;
+	private final SimpleStringProperty tempo;
 	
-	public RelatorioModelo(String nome, String cartao, String sala) {
+	public RelatorioModelo(String nome, String cartao, String tempo) {
 		this.nome = new SimpleStringProperty(nome);
 		this.cartao = new SimpleStringProperty(cartao);
-		this.sala = new SimpleStringProperty(sala);
+		this.tempo = new SimpleStringProperty(tempo);
 	}
 
 	public String getNome() {
@@ -21,8 +21,8 @@ public class RelatorioModelo {
 		return cartao.getValue();
 	}
 
-	public String getSala() {
-		return sala.getValue();
+	public String getTempo() {
+		return tempo.getValue();
 	}
 	
 	

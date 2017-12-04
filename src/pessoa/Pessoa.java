@@ -14,6 +14,9 @@ public class Pessoa implements Runnable {
 
 	private Sala sala;
 
+	private double tempoNaSala;
+	private double tempoNaFila;
+
 	public Pessoa(Sala sala) {
 		this.sala = sala;
 		meuCartao = new Cartao(Integer.toHexString(hashCode()), sexo);
@@ -24,10 +27,12 @@ public class Pessoa implements Runnable {
 	public void run() {
 		Thread.currentThread().setName(this.toString());
 
+		long tempoInicialFila = System.currentTimeMillis();
 		entrarNaSala();
-//		if(Thread.currentThread().isInterrupted()) return;
+		tempoNaFila = (System.currentTimeMillis() - tempoInicialFila) / 1000;
+
+		long tempoInicialSala = System.currentTimeMillis();
 		trocarCartao();
-//		if(Thread.currentThread().isInterrupted()) return;
 
 		synchronized (this) {
 			while (cartoes.total() < 3 || cartoes.totalDoSexoMasculino() < 1 || cartoes.totalDoSexoFeminino() < 1) {
@@ -36,6 +41,7 @@ public class Pessoa implements Runnable {
 					wait();
 				} catch (InterruptedException e) {
 					System.out.println("Thread: " + Thread.currentThread().getName() + " foi imterrompida");
+					tempoNaSala = (System.currentTimeMillis() - tempoInicialSala) / 1000;
 					Thread.currentThread().interrupt();
 					return;
 					// e.printStackTrace();
@@ -44,6 +50,9 @@ public class Pessoa implements Runnable {
 		}
 
 		sairDaSala();
+
+		tempoNaSala = (System.currentTimeMillis() - tempoInicialSala) / 1000;
+
 	}
 
 	private void trocarCartao() {
@@ -72,7 +81,7 @@ public class Pessoa implements Runnable {
 				pessoa.notify();
 
 				System.out.println("Na " + i + "a tentativa " + this + " trocou cartao com " + pessoa);
-				
+
 			}
 
 		}
@@ -108,7 +117,7 @@ public class Pessoa implements Runnable {
 
 	@Override
 	public String toString() {
-		return super.toString().replaceAll("pessoa.", "") + "[" + sexo.getValor()+"]";
+		return super.toString().replaceAll("pessoa.", "") + "[" + sexo.getValor() + "]";
 	}
 
 	public Cartao getMeuCartao() {
@@ -117,5 +126,13 @@ public class Pessoa implements Runnable {
 
 	public ListaDeCartoes getCartoes() {
 		return cartoes;
+	}
+
+	public double getTempoNaSala() {
+		return tempoNaSala;
+	}
+
+	public double getTempoNaFila() {
+		return tempoNaFila;
 	}
 }
