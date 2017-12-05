@@ -94,9 +94,7 @@ public class Pessoa implements Runnable {
 					return pessoa;
 			}
 		}
-
 		return null;
-
 	}
 
 	private void trocarCartao(Pessoa pessoa) {

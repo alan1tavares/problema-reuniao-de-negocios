@@ -41,7 +41,6 @@ public class Main extends Application {
 	public static void main(String[] args) {
 
 		ExecutorService executorService = Executors.newCachedThreadPool();
-		System.out.println();
 
 		Sala sala = new Sala(5);
 		fabricaDePessoas = new CriaPessoaAleatoria(20, sala);
