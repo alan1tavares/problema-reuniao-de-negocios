@@ -60,17 +60,16 @@ public class CriaPessoaAleatoria implements Runnable {
 		}
 		System.out.println(sala);
 		List<Pessoa> pessoas = getListaDePessoasCriadas();
-//		System.out.println("\nPessoa\t\t\t\t\tCartoes\t\t\tTempo");
 		double tempoTotalSala = 0, tempoTotalFila = 0;
 		for (Pessoa pessoa : pessoas) {
-//			System.out.println(pessoa + "\t\t" + pessoa.getCartoes() + "\t\t" + pessoa.getTempoNaSala());
+			System.out.println(pessoa + "\t" + pessoa.getCartoes() + "\t" + pessoa.getTempoNaSala());
 
 			tempoTotalSala += pessoa.getTempoNaSala();
 			tempoTotalFila += pessoa.getTempoNaFila();
 		}
 
-//		System.out.println("Tempo medio na fila: " + (tempoTotalFila / listaDePessoasCriadas.totalDePessoas()) + "s");
-//		System.out.println("Tempo medio na sala: " + (tempoTotalSala / listaDePessoasCriadas.totalDePessoas()) + "s");
+		System.out.println("Tempo medio na fila: " + (tempoTotalFila / listaDePessoasCriadas.totalDePessoas()) + "s");
+		System.out.println("Tempo medio na sala: " + (tempoTotalSala / listaDePessoasCriadas.totalDePessoas()) + "s");
 		tempoMedioFila = tempoTotalFila / listaDePessoasCriadas.totalDePessoas();
 		tempoMedioSala = tempoTotalSala / listaDePessoasCriadas.totalDePessoas();
 		

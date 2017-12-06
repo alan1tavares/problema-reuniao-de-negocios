@@ -1,0 +1,341 @@
+Pessoa@4a9888e0[H] foi criada
+Pessoa@4a9888e0[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 1.
+Pessoas[Pessoa@4a9888e0[H]].
+Pessoa@4a9888e0[H] esta procurando alguem pra trocar cartao
+Pessoa@4a9888e0[H] está na 1a tentativa
+Pessoa@4a9888e0[H] está na 2a tentativa
+Pessoa@4a9888e0[H] está na 3a tentativa
+Pessoa@4a9888e0[H] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@ba582db[H] foi criada
+Pessoa@ba582db[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 2.
+Pessoas[Pessoa@4a9888e0[H], Pessoa@ba582db[H]].
+Pessoa@ba582db[H] esta procurando alguem pra trocar cartao
+Pessoa@ba582db[H] está na 1a tentativa
+Pessoa@3a64cbec[H] foi criada
+Pessoa@3a64cbec[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 3.
+Pessoas[Pessoa@4a9888e0[H], Pessoa@ba582db[H], Pessoa@3a64cbec[H]].
+Pessoa@3a64cbec[H] esta procurando alguem pra trocar cartao
+Pessoa@3a64cbec[H] está na 1a tentativa
+Na 1a tentativa Pessoa@ba582db[H] trocou cartao com Pessoa@4a9888e0[H]
+Pessoa@4a9888e0[H] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@ba582db[H] está na 2a tentativa
+Pessoa@6b8a7d94[H] foi criada
+Pessoa@6b8a7d94[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@4a9888e0[H], Pessoa@ba582db[H], Pessoa@3a64cbec[H], Pessoa@6b8a7d94[H]].
+Pessoa@6b8a7d94[H] esta procurando alguem pra trocar cartao
+Pessoa@6b8a7d94[H] está na 1a tentativa
+Na 1a tentativa Pessoa@3a64cbec[H] trocou cartao com Pessoa@4a9888e0[H]
+Pessoa@3a64cbec[H] está na 2a tentativa
+Na 2a tentativa Pessoa@ba582db[H] trocou cartao com Pessoa@3a64cbec[H]
+Pessoa@ba582db[H] está na 3a tentativa
+Pessoa@4a9888e0[H] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@6f5091d4[H] foi criada
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Na 2a tentativa Pessoa@3a64cbec[H] trocou cartao com Pessoa@6b8a7d94[H]
+Pessoa@3a64cbec[H] está na 3a tentativa
+Pessoa@3a64cbec[H] nao tem cartoes pra sair da sala. Foi dormir.
+Na 1a tentativa Pessoa@6b8a7d94[H] trocou cartao com Pessoa@4a9888e0[H]
+Pessoa@4a9888e0[H] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@6b8a7d94[H] está na 2a tentativa
+Pessoa@6fc462bf[H] foi criada
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Na 3a tentativa Pessoa@ba582db[H] trocou cartao com Pessoa@6b8a7d94[H]
+Pessoa@ba582db[H] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@6b8a7d94[H] está na 3a tentativa
+Pessoa@6b8a7d94[H] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@4fb2fb28[M] foi criada
+Pessoa@4fb2fb28[M] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@4a9888e0[H], Pessoa@ba582db[H], Pessoa@3a64cbec[H], Pessoa@6b8a7d94[H], Pessoa@4fb2fb28[M]].
+Pessoa@4fb2fb28[M] esta procurando alguem pra trocar cartao
+Pessoa@4fb2fb28[M] está na 1a tentativa
+Pessoa@22cd9d3[M] foi criada
+Pessoa@22cd9d3[M] nao conseguiu entrar na sala. Vai dormir.
+Na 1a tentativa Pessoa@4fb2fb28[M] trocou cartao com Pessoa@4a9888e0[H]
+Pessoa@4fb2fb28[M] está na 2a tentativa
+Pessoa@4a9888e0[H] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@ba582db[H], Pessoa@3a64cbec[H], Pessoa@6b8a7d94[H], Pessoa@4fb2fb28[M]].
+Pessoa@22cd9d3[M] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@ba582db[H], Pessoa@3a64cbec[H], Pessoa@6b8a7d94[H], Pessoa@4fb2fb28[M], Pessoa@22cd9d3[M]].
+Pessoa@22cd9d3[M] esta procurando alguem pra trocar cartao
+Pessoa@22cd9d3[M] está na 1a tentativa
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@468677f6[H] foi criada
+Pessoa@468677f6[H] nao conseguiu entrar na sala. Vai dormir.
+Na 2a tentativa Pessoa@4fb2fb28[M] trocou cartao com Pessoa@ba582db[H]
+Pessoa@4fb2fb28[M] está na 3a tentativa
+Pessoa@ba582db[H] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@3a64cbec[H], Pessoa@6b8a7d94[H], Pessoa@4fb2fb28[M], Pessoa@22cd9d3[M]].
+Pessoa@468677f6[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@3a64cbec[H], Pessoa@6b8a7d94[H], Pessoa@4fb2fb28[M], Pessoa@22cd9d3[M], Pessoa@468677f6[H]].
+Pessoa@468677f6[H] esta procurando alguem pra trocar cartao
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@468677f6[H] está na 1a tentativa
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@4ac0c1d[M] foi criada
+Pessoa@4ac0c1d[M] nao conseguiu entrar na sala. Vai dormir.
+Na 3a tentativa Pessoa@4fb2fb28[M] trocou cartao com Pessoa@3a64cbec[H]
+Pessoa@3a64cbec[H] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@6b8a7d94[H], Pessoa@4fb2fb28[M], Pessoa@22cd9d3[M], Pessoa@468677f6[H]].
+Pessoa@4ac0c1d[M] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@6b8a7d94[H], Pessoa@4fb2fb28[M], Pessoa@22cd9d3[M], Pessoa@468677f6[H], Pessoa@4ac0c1d[M]].
+Pessoa@4fb2fb28[M] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@4ac0c1d[M] esta procurando alguem pra trocar cartao
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@4ac0c1d[M] está na 1a tentativa
+Pessoa@22cd9d3[M] está na 2a tentativa
+Pessoa@602abf1a[H] foi criada
+Pessoa@602abf1a[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@468677f6[H] está na 2a tentativa
+Na 1a tentativa Pessoa@4ac0c1d[M] trocou cartao com Pessoa@6b8a7d94[H]
+Pessoa@6b8a7d94[H] saiu da sala. Nofificando as outras.
+Pessoa@4ac0c1d[M] está na 2a tentativa
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@4fb2fb28[M], Pessoa@22cd9d3[M], Pessoa@468677f6[H], Pessoa@4ac0c1d[M]].
+Pessoa@602abf1a[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@4fb2fb28[M], Pessoa@22cd9d3[M], Pessoa@468677f6[H], Pessoa@4ac0c1d[M], Pessoa@602abf1a[H]].
+Pessoa@602abf1a[H] esta procurando alguem pra trocar cartao
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@602abf1a[H] está na 1a tentativa
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@53099f80[M] foi criada
+Pessoa@53099f80[M] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@468677f6[H] está na 3a tentativa
+Na 2a tentativa Pessoa@4ac0c1d[M] trocou cartao com Pessoa@4fb2fb28[M]
+Pessoa@4ac0c1d[M] está na 3a tentativa
+Pessoa@4fb2fb28[M] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@22cd9d3[M], Pessoa@468677f6[H], Pessoa@4ac0c1d[M], Pessoa@602abf1a[H]].
+Pessoa@53099f80[M] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@22cd9d3[M], Pessoa@468677f6[H], Pessoa@4ac0c1d[M], Pessoa@602abf1a[H], Pessoa@53099f80[M]].
+Pessoa@53099f80[M] esta procurando alguem pra trocar cartao
+Pessoa@53099f80[M] está na 1a tentativa
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@26c57bd0[H] foi criada
+Pessoa@26c57bd0[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@22cd9d3[M] está na 3a tentativa
+Na 3a tentativa Pessoa@4ac0c1d[M] trocou cartao com Pessoa@22cd9d3[M]
+Pessoa@4ac0c1d[M] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@22cd9d3[M], Pessoa@468677f6[H], Pessoa@602abf1a[H], Pessoa@53099f80[M]].
+Pessoa@26c57bd0[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@22cd9d3[M], Pessoa@468677f6[H], Pessoa@602abf1a[H], Pessoa@53099f80[M], Pessoa@26c57bd0[H]].
+Pessoa@26c57bd0[H] esta procurando alguem pra trocar cartao
+Pessoa@26c57bd0[H] está na 1a tentativa
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@42ed57f1[M] foi criada
+Pessoa@42ed57f1[M] nao conseguiu entrar na sala. Vai dormir.
+Na 3a tentativa Pessoa@22cd9d3[M] trocou cartao com Pessoa@468677f6[H]
+Pessoa@468677f6[H] nao tem cartoes pra sair da sala. Foi dormir.
+Na 1a tentativa Pessoa@53099f80[M] trocou cartao com Pessoa@22cd9d3[M]
+Pessoa@22cd9d3[M] saiu da sala. Nofificando as outras.
+Pessoa@53099f80[M] está na 2a tentativa
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@468677f6[H], Pessoa@602abf1a[H], Pessoa@53099f80[M], Pessoa@26c57bd0[H]].
+Pessoa@42ed57f1[M] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@468677f6[H], Pessoa@602abf1a[H], Pessoa@53099f80[M], Pessoa@26c57bd0[H], Pessoa@42ed57f1[M]].
+Pessoa@42ed57f1[M] esta procurando alguem pra trocar cartao
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@42ed57f1[M] está na 1a tentativa
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@602abf1a[H] está na 2a tentativa
+Pessoa@778af2d9[H] foi criada
+Pessoa@778af2d9[H] nao conseguiu entrar na sala. Vai dormir.
+Na 2a tentativa Pessoa@53099f80[M] trocou cartao com Pessoa@468677f6[H]
+Pessoa@468677f6[H] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@53099f80[M] está na 3a tentativa
+Pessoa@26c57bd0[H] está na 2a tentativa
+Pessoa@68e09637[M] foi criada
+Pessoa@68e09637[M] nao conseguiu entrar na sala. Vai dormir.
+Na 2a tentativa Pessoa@602abf1a[H] trocou cartao com Pessoa@468677f6[H]
+Pessoa@602abf1a[H] está na 3a tentativa
+Na 3a tentativa Pessoa@53099f80[M] trocou cartao com Pessoa@602abf1a[H]
+Pessoa@53099f80[M] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@468677f6[H], Pessoa@602abf1a[H], Pessoa@26c57bd0[H], Pessoa@42ed57f1[M]].
+Pessoa@68e09637[M] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@468677f6[H], Pessoa@602abf1a[H], Pessoa@26c57bd0[H], Pessoa@42ed57f1[M], Pessoa@68e09637[M]].
+Pessoa@68e09637[M] esta procurando alguem pra trocar cartao
+Pessoa@68e09637[M] está na 1a tentativa
+Pessoa@778af2d9[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@6fc462bf[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@4d0cfa90[H] foi criada
+Pessoa@4d0cfa90[H] nao conseguiu entrar na sala. Vai dormir.
+Na 1a tentativa Pessoa@42ed57f1[M] trocou cartao com Pessoa@468677f6[H]
+Pessoa@42ed57f1[M] está na 2a tentativa
+Na 3a tentativa Pessoa@602abf1a[H] trocou cartao com Pessoa@26c57bd0[H]
+Pessoa@6d30d5d2[H] foi criada
+Pessoa@6d30d5d2[H] nao conseguiu entrar na sala. Vai dormir.
+Na 2a tentativa Pessoa@42ed57f1[M] trocou cartao com Pessoa@602abf1a[H]
+Na 1a tentativa Pessoa@68e09637[M] trocou cartao com Pessoa@468677f6[H]
+Pessoa@602abf1a[H] saiu da sala. Nofificando as outras.
+Pessoa@68e09637[M] está na 2a tentativa
+Pessoa@42ed57f1[M] está na 3a tentativa
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@468677f6[H], Pessoa@26c57bd0[H], Pessoa@42ed57f1[M], Pessoa@68e09637[M]].
+Pessoa@6d30d5d2[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@468677f6[H], Pessoa@26c57bd0[H], Pessoa@42ed57f1[M], Pessoa@68e09637[M], Pessoa@6d30d5d2[H]].
+Pessoa@6d30d5d2[H] esta procurando alguem pra trocar cartao
+Pessoa@6d30d5d2[H] está na 1a tentativa
+Pessoa@4d0cfa90[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@468677f6[H] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@26c57bd0[H], Pessoa@42ed57f1[M], Pessoa@68e09637[M], Pessoa@6d30d5d2[H]].
+Pessoa@6fc462bf[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@26c57bd0[H], Pessoa@42ed57f1[M], Pessoa@68e09637[M], Pessoa@6d30d5d2[H], Pessoa@6fc462bf[H]].
+Pessoa@6fc462bf[H] esta procurando alguem pra trocar cartao
+Pessoa@6fc462bf[H] está na 1a tentativa
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@778af2d9[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@4d0cfa90[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@57757237[M] foi criada
+Pessoa@57757237[M] nao conseguiu entrar na sala. Vai dormir.
+Na 2a tentativa Pessoa@68e09637[M] trocou cartao com Pessoa@26c57bd0[H]
+Pessoa@68e09637[M] está na 3a tentativa
+Pessoa@26c57bd0[H] está na 3a tentativa
+Pessoa@7d87ca33[M] foi criada
+Pessoa@7d87ca33[M] nao conseguiu entrar na sala. Vai dormir.
+Na 3a tentativa Pessoa@42ed57f1[M] trocou cartao com Pessoa@26c57bd0[H]
+Na 3a tentativa Pessoa@68e09637[M] trocou cartao com Pessoa@42ed57f1[M]
+Pessoa@6d30d5d2[H] está na 2a tentativa
+Pessoa@68e09637[M] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@26c57bd0[H], Pessoa@42ed57f1[M], Pessoa@6d30d5d2[H], Pessoa@6fc462bf[H]].
+Pessoa@42ed57f1[M] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 3.
+Pessoas[Pessoa@26c57bd0[H], Pessoa@6d30d5d2[H], Pessoa@6fc462bf[H]].
+Pessoa@7d87ca33[M] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@26c57bd0[H], Pessoa@6d30d5d2[H], Pessoa@6fc462bf[H], Pessoa@7d87ca33[M]].
+Pessoa@7d87ca33[M] esta procurando alguem pra trocar cartao
+Pessoa@7d87ca33[M] está na 1a tentativa
+Pessoa@57757237[M] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@26c57bd0[H], Pessoa@6d30d5d2[H], Pessoa@6fc462bf[H], Pessoa@7d87ca33[M], Pessoa@57757237[M]].
+Pessoa@57757237[M] esta procurando alguem pra trocar cartao
+Pessoa@57757237[M] está na 1a tentativa
+Pessoa@4d0cfa90[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@778af2d9[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@6f5091d4[H] nao conseguiu entrar na sala. Vai dormir.
+
+Pessoas que foram ciradas:
+Total de pessoas: 20.
+Pessoas[Pessoa@4a9888e0[H], Pessoa@ba582db[H], Pessoa@3a64cbec[H], Pessoa@6b8a7d94[H], Pessoa@6f5091d4[H], Pessoa@6fc462bf[H], Pessoa@4fb2fb28[M], Pessoa@22cd9d3[M], Pessoa@468677f6[H], Pessoa@4ac0c1d[M], Pessoa@602abf1a[H], Pessoa@53099f80[M], Pessoa@26c57bd0[H], Pessoa@42ed57f1[M], Pessoa@778af2d9[H], Pessoa@68e09637[M], Pessoa@4d0cfa90[H], Pessoa@6d30d5d2[H], Pessoa@57757237[M], Pessoa@7d87ca33[M]]
+
+Na 1a tentativa Pessoa@6fc462bf[H] trocou cartao com Pessoa@26c57bd0[H]
+Pessoa@6fc462bf[H] está na 2a tentativa
+Na 2a tentativa Pessoa@6fc462bf[H] trocou cartao com Pessoa@6d30d5d2[H]
+Na 1a tentativa Pessoa@57757237[M] trocou cartao com Pessoa@26c57bd0[H]
+Pessoa@6fc462bf[H] está na 3a tentativa
+Pessoa@57757237[M] está na 2a tentativa
+Na 1a tentativa Pessoa@7d87ca33[M] trocou cartao com Pessoa@26c57bd0[H]
+Pessoa@7d87ca33[M] está na 2a tentativa
+Na 2a tentativa Pessoa@57757237[M] trocou cartao com Pessoa@6d30d5d2[H]
+Pessoa@57757237[M] está na 3a tentativa
+Na 3a tentativa Pessoa@6fc462bf[H] trocou cartao com Pessoa@7d87ca33[M]
+Na 2a tentativa Pessoa@6d30d5d2[H] trocou cartao com Pessoa@26c57bd0[H]
+Pessoa@6d30d5d2[H] está na 3a tentativa
+Pessoa@26c57bd0[H] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@6d30d5d2[H], Pessoa@6fc462bf[H], Pessoa@7d87ca33[M], Pessoa@57757237[M]].
+Pessoa@6f5091d4[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@6d30d5d2[H], Pessoa@6fc462bf[H], Pessoa@7d87ca33[M], Pessoa@57757237[M], Pessoa@6f5091d4[H]].
+Pessoa@6f5091d4[H] esta procurando alguem pra trocar cartao
+Pessoa@778af2d9[H] nao conseguiu entrar na sala. Vai dormir.
+Pessoa@6f5091d4[H] está na 1a tentativa
+Pessoa@4d0cfa90[H] nao conseguiu entrar na sala. Vai dormir.
+Na 3a tentativa Pessoa@57757237[M] trocou cartao com Pessoa@6fc462bf[H]
+Pessoa@57757237[M] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@6fc462bf[H] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@6d30d5d2[H], Pessoa@7d87ca33[M], Pessoa@57757237[M], Pessoa@6f5091d4[H]].
+Pessoa@4d0cfa90[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 5.
+Pessoas[Pessoa@6d30d5d2[H], Pessoa@7d87ca33[M], Pessoa@57757237[M], Pessoa@6f5091d4[H], Pessoa@4d0cfa90[H]].
+Pessoa@4d0cfa90[H] esta procurando alguem pra trocar cartao
+Pessoa@4d0cfa90[H] está na 1a tentativa
+Pessoa@778af2d9[H] nao conseguiu entrar na sala. Vai dormir.
+Na 2a tentativa Pessoa@7d87ca33[M] trocou cartao com Pessoa@6d30d5d2[H]
+Pessoa@7d87ca33[M] está na 3a tentativa
+Na 3a tentativa Pessoa@7d87ca33[M] trocou cartao com Pessoa@57757237[M]
+Na 1a tentativa Pessoa@4d0cfa90[H] trocou cartao com Pessoa@6d30d5d2[H]
+Pessoa@7d87ca33[M] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@6d30d5d2[H], Pessoa@57757237[M], Pessoa@6f5091d4[H], Pessoa@4d0cfa90[H]].
+Pessoa@57757237[M] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 3.
+Pessoas[Pessoa@6d30d5d2[H], Pessoa@6f5091d4[H], Pessoa@4d0cfa90[H]].
+Pessoa@4d0cfa90[H] está na 2a tentativa
+Pessoa@778af2d9[H] entrou na sala.
+Pessoas que etao na sala: Total de pessoas: 4.
+Pessoas[Pessoa@6d30d5d2[H], Pessoa@6f5091d4[H], Pessoa@4d0cfa90[H], Pessoa@778af2d9[H]].
+Pessoa@778af2d9[H] esta procurando alguem pra trocar cartao
+Pessoa@778af2d9[H] está na 1a tentativa
+Na 1a tentativa Pessoa@6f5091d4[H] trocou cartao com Pessoa@6d30d5d2[H]
+Pessoa@6f5091d4[H] está na 2a tentativa
+Na 2a tentativa Pessoa@4d0cfa90[H] trocou cartao com Pessoa@6f5091d4[H]
+Pessoa@4d0cfa90[H] está na 3a tentativa
+Na 1a tentativa Pessoa@778af2d9[H] trocou cartao com Pessoa@6d30d5d2[H]
+Pessoa@778af2d9[H] está na 2a tentativa
+Pessoa@6d30d5d2[H] saiu da sala. Nofificando as outras.
+Pessoas que etao na sala: Total de pessoas: 3.
+Pessoas[Pessoa@6f5091d4[H], Pessoa@4d0cfa90[H], Pessoa@778af2d9[H]].
+Pessoa@6f5091d4[H] está na 3a tentativa
+Na 3a tentativa Pessoa@4d0cfa90[H] trocou cartao com Pessoa@778af2d9[H]
+Pessoa@4d0cfa90[H] nao tem cartoes pra sair da sala. Foi dormir.
+Na 2a tentativa Pessoa@778af2d9[H] trocou cartao com Pessoa@6f5091d4[H]
+Pessoa@778af2d9[H] está na 3a tentativa
+Pessoa@6f5091d4[H] nao tem cartoes pra sair da sala. Foi dormir.
+Pessoa@778af2d9[H] nao tem cartoes pra sair da sala. Foi dormir.
+Interrompenddo todas as threads....
+Thread: Pessoa@4d0cfa90[H] foi imterrompida
+Thread: Pessoa@778af2d9[H] foi imterrompida
+Thread: Pessoa@6f5091d4[H] foi imterrompida
+Total de pessoas: 3.
+Pessoas[Pessoa@6f5091d4[H], Pessoa@4d0cfa90[H], Pessoa@778af2d9[H]]
+Pessoa@4a9888e0[H]	[6b8a7d94[H], 4fb2fb28[M], ba582db[H], 3a64cbec[H]]	13.0
+Pessoa@ba582db[H]	[6b8a7d94[H], 4fb2fb28[M], 4a9888e0[H], 3a64cbec[H]]	14.0
+Pessoa@3a64cbec[H]	[6b8a7d94[H], 4fb2fb28[M], 4a9888e0[H], ba582db[H]]	14.0
+Pessoa@6b8a7d94[H]	[4ac0c1d[M], 4a9888e0[H], ba582db[H], 3a64cbec[H]]	14.0
+Pessoa@6f5091d4[H]	[6d30d5d2[H], 4d0cfa90[H], 778af2d9[H]]	113.0
+Pessoa@6fc462bf[H]	[7d87ca33[M], 6d30d5d2[H], 26c57bd0[H], 57757237[M]]	12.0
+Pessoa@4fb2fb28[M]	[4ac0c1d[M], 4a9888e0[H], ba582db[H], 3a64cbec[H]]	10.0
+Pessoa@22cd9d3[M]	[4ac0c1d[M], 53099f80[M], 468677f6[H]]	12.0
+Pessoa@468677f6[H]	[53099f80[M], 602abf1a[H], 68e09637[M], 22cd9d3[M], 42ed57f1[M]]	18.0
+Pessoa@4ac0c1d[M]	[6b8a7d94[H], 4fb2fb28[M], 22cd9d3[M]]	6.0
+Pessoa@602abf1a[H]	[53099f80[M], 468677f6[H], 26c57bd0[H], 42ed57f1[M]]	14.0
+Pessoa@53099f80[M]	[602abf1a[H], 22cd9d3[M], 468677f6[H]]	8.0
+Pessoa@26c57bd0[H]	[7d87ca33[M], 602abf1a[H], 68e09637[M], 6d30d5d2[H], 42ed57f1[M], 6fc462bf[H], 57757237[M]]	22.0
+Pessoa@42ed57f1[M]	[602abf1a[H], 68e09637[M], 468677f6[H], 26c57bd0[H]]	12.0
+Pessoa@778af2d9[H]	[6f5091d4[H], 6d30d5d2[H], 4d0cfa90[H]]	111.0
+Pessoa@68e09637[M]	[468677f6[H], 26c57bd0[H], 42ed57f1[M]]	8.0
+Pessoa@4d0cfa90[H]	[6f5091d4[H], 6d30d5d2[H], 778af2d9[H]]	113.0
+Pessoa@6d30d5d2[H]	[6f5091d4[H], 7d87ca33[M], 26c57bd0[H], 4d0cfa90[H], 778af2d9[H], 6fc462bf[H], 57757237[M]]	18.0
+Pessoa@57757237[M]	[7d87ca33[M], 6d30d5d2[H], 26c57bd0[H], 6fc462bf[H]]	10.0
+Pessoa@7d87ca33[M]	[6d30d5d2[H], 26c57bd0[H], 6fc462bf[H], 57757237[M]]	10.0
+Tempo medio na fila: 4.9s
+Tempo medio na sala: 27.6s
+Criando o relatorio...

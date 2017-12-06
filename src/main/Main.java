@@ -22,7 +22,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader();
-		Parent root = fxmlLoader.load(getClass().getResource("../gui/Relatorio.fxml").openStream());
+		Parent root = fxmlLoader.load(getClass().getResource("Relatorio.fxml").openStream());
 		RelatorioController controller = (RelatorioController) fxmlLoader.getController();
 
 		for (Pessoa p : pessoas) {
